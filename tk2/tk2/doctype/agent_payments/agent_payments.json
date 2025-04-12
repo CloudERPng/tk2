@@ -1,0 +1,116 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-28 22:55:26.655745",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "agent",
+  "amount",
+  "commissions_deducted",
+  "charges_deducted",
+  "column_break_bdwe",
+  "bank",
+  "date",
+  "amended_from",
+  "invoice_selection",
+  "selected_total",
+  "section_break_siau",
+  "html_field"
+ ],
+ "fields": [
+  {
+   "fieldname": "agent",
+   "fieldtype": "Link",
+   "label": "Agent",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Amount"
+  },
+  {
+   "fieldname": "commissions_deducted",
+   "fieldtype": "Currency",
+   "label": "Delivery Fees"
+  },
+  {
+   "fieldname": "charges_deducted",
+   "fieldtype": "Currency",
+   "label": "Discount"
+  },
+  {
+   "fieldname": "column_break_bdwe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Link",
+   "label": "Bank",
+   "options": "Account"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Agent Payments",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "invoice_selection",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "Selected Invoice"
+  },
+  {
+   "fieldname": "selected_total",
+   "fieldtype": "Data",
+   "label": "Amount Received From Agent"
+  },
+  {
+   "fieldname": "section_break_siau",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "html_field",
+   "fieldtype": "HTML",
+   "label": "Outstanding Invoices"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-04-12 21:51:00.599841",
+ "modified_by": "Administrator",
+ "module": "Tk2",
+ "name": "Agent Payments",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

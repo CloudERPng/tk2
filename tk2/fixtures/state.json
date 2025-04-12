@@ -1,0 +1,554 @@
+[
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.482716",
+  "name": "Bauchi",
+  "state": "Bauchi"
+ },
+ {
+  "country": "Ghana",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.676289",
+  "name": "Bono East Region",
+  "state": "Bono East Region"
+ },
+ {
+  "country": "Ghana",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.688624",
+  "name": "Ahafo Region",
+  "state": "Ahafo Region"
+ },
+ {
+  "country": "Ghana",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.700111",
+  "name": "Brong-Ahafo Region",
+  "state": "Brong-Ahafo Region"
+ },
+ {
+  "country": "Kenya",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.707080",
+  "name": "Busia County",
+  "state": "Busia County"
+ },
+ {
+  "country": "Ghana",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.711588",
+  "name": "Central Region",
+  "state": "Central Region"
+ },
+ {
+  "country": "Cameroon",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.718128",
+  "name": "Centre",
+  "state": "Centre"
+ },
+ {
+  "country": "Kenya",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.723389",
+  "name": "Coast Province",
+  "state": "Coast Province"
+ },
+ {
+  "country": "Ghana",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.734334",
+  "name": "Eastern Region",
+  "state": "Eastern Region"
+ },
+ {
+  "country": "Ghana",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.740225",
+  "name": "Far North",
+  "state": "Far North"
+ },
+ {
+  "country": "Kenya",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.753303",
+  "name": "Kajiado County",
+  "state": "Kajiado County"
+ },
+ {
+  "country": "Kenya",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.759165",
+  "name": "Kiambu County",
+  "state": "Kiambu County"
+ },
+ {
+  "country": "Kenya",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.765101",
+  "name": "Kilifi County",
+  "state": "Kilifi County"
+ },
+ {
+  "country": "Kenya",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.771121",
+  "name": "Kwale County",
+  "state": "Kwale County"
+ },
+ {
+  "country": "Kenya",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.778248",
+  "name": "Littoral",
+  "state": "Littoral"
+ },
+ {
+  "country": "Kenya",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.784486",
+  "name": "Machakos County",
+  "state": "Machakos County"
+ },
+ {
+  "country": "Kenya",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.790496",
+  "name": "Nairobi",
+  "state": "Nairobi"
+ },
+ {
+  "country": "Ghana",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.809422",
+  "name": "Northern Region",
+  "state": "Northern Region"
+ },
+ {
+  "country": "Cameroon",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.814119",
+  "name": "Northwest",
+  "state": "Northwest"
+ },
+ {
+  "country": "Cameroon",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.820030",
+  "name": "Savannah Region",
+  "state": "Savannah Region"
+ },
+ {
+  "country": "Ghana",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.835186",
+  "name": "Upper West Region",
+  "state": "Upper West Region"
+ },
+ {
+  "country": "Cameroon",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.852052",
+  "name": "Western North Region",
+  "state": "Western North Region"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.557778",
+  "name": "Jigawa",
+  "state": "Jigawa"
+ },
+ {
+  "country": "Ghana",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.803656",
+  "name": "North East Region",
+  "state": "North East Region"
+ },
+ {
+  "country": "Ghana",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.840749",
+  "name": "Volta Region",
+  "state": "Volta Region"
+ },
+ {
+  "country": "Cameroon",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.856497",
+  "name": "Western Region",
+  "state": "Western Region"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.579337",
+  "name": "Kebbi",
+  "state": "Kebbi"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.653011",
+  "name": "Sokoto",
+  "state": "Sokoto"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.670429",
+  "name": "Zamfara",
+  "state": "Zamfara"
+ },
+ {
+  "country": "Cameroon",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.826562",
+  "name": "Southwest",
+  "state": "Southwest"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.664072",
+  "name": "Yobe",
+  "state": "Yobe"
+ },
+ {
+  "country": "Ghana",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.683131",
+  "name": "South",
+  "state": "South"
+ },
+ {
+  "country": "Cameroon",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.796523",
+  "name": "North",
+  "state": "North"
+ },
+ {
+  "country": "Ghana",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.830914",
+  "name": "Upper East Region",
+  "state": "Upper East Region"
+ },
+ {
+  "country": "Cameroon",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.847462",
+  "name": "West",
+  "state": "West"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.574554",
+  "name": "Katsina",
+  "state": "Katsina"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.659735",
+  "name": "Taraba",
+  "state": "Taraba"
+ },
+ {
+  "country": "Ghana",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.694466",
+  "name": "Ashanti Region",
+  "state": "Ashanti Region"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.465070",
+  "name": "Adamawa",
+  "state": "Adamawa"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.503542",
+  "name": "Borno",
+  "state": "Borno"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.547121",
+  "name": "Gombe",
+  "state": "Gombe"
+ },
+ {
+  "country": "Cameroon",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.728537",
+  "name": "East",
+  "state": "East"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.534127",
+  "name": "Ekiti",
+  "state": "Ekiti"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.569734",
+  "name": "Kano",
+  "state": "Kano"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.522084",
+  "name": "Ebonyi",
+  "state": "Ebonyi"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.592035",
+  "name": "Kwara",
+  "state": "Kwara"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.611209",
+  "name": "Niger",
+  "state": "Niger"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.641413",
+  "name": "Plateau",
+  "state": "Plateau"
+ },
+ {
+  "country": "Ghana",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.746162",
+  "name": "Greater Accra Region",
+  "state": "Greater Accra Region"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.495652",
+  "name": "Benue",
+  "state": "Benue"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.604331",
+  "name": "Nasarawa",
+  "state": "Nasarawa"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.628653",
+  "name": "Osun",
+  "state": "Osun"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.489566",
+  "name": "Bayelsa",
+  "state": "Bayelsa"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.471785",
+  "name": "Akwa Ibom",
+  "state": "Akwa Ibom"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.563514",
+  "name": "Kaduna",
+  "state": "Kaduna"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.586211",
+  "name": "Kogi",
+  "state": "Kogi"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.439863",
+  "name": "Abia",
+  "state": "Abia"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.476418",
+  "name": "Anambra",
+  "state": "Anambra"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.509390",
+  "name": "Cross River",
+  "state": "Cross River"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.540874",
+  "name": "Enugu",
+  "state": "Enugu"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.552427",
+  "name": "Imo",
+  "state": "Imo"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.622853",
+  "name": "Ondo",
+  "state": "Ondo"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.635266",
+  "name": "Oyo",
+  "state": "Oyo"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.616958",
+  "name": "Ogun",
+  "state": "Ogun"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.527873",
+  "name": "Edo",
+  "state": "Edo"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.516271",
+  "name": "Delta",
+  "state": "Delta"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.647136",
+  "name": "Rivers",
+  "state": "Rivers"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.457066",
+  "name": "Abuja",
+  "state": "Abuja"
+ },
+ {
+  "country": "Nigeria",
+  "docstatus": 0,
+  "doctype": "State",
+  "modified": "2025-01-29 22:36:35.597906",
+  "name": "Lagos",
+  "state": "Lagos"
+ }
+]

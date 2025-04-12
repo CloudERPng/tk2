@@ -1,0 +1,56 @@
+[
+ {
+  "dm_email": "customercare@tkstore.com",
+  "docstatus": 0,
+  "doctype": "Digital Marketers",
+  "modified": "2025-03-05 12:15:57.668336",
+  "name": "customercare@tkstore.com",
+  "user": null,
+  "user_name": null
+ },
+ {
+  "dm_email": "allorders@naija4watch.xyz",
+  "docstatus": 0,
+  "doctype": "Digital Marketers",
+  "modified": "2025-03-24 17:52:46.669903",
+  "name": "allorders@naija4watch.xyz",
+  "user": "timothydamola@gmail.com",
+  "user_name": "Timothy Moyofola"
+ },
+ {
+  "dm_email": "olamide@xlevelsystems.com",
+  "docstatus": 0,
+  "doctype": "Digital Marketers",
+  "modified": "2025-02-09 18:41:03.104218",
+  "name": "olamide@xlevelsystems.com",
+  "user": "support@clouderp.one",
+  "user_name": "support"
+ },
+ {
+  "dm_email": "emma@nlwatch.xyz",
+  "docstatus": 0,
+  "doctype": "Digital Marketers",
+  "modified": "2025-02-09 18:34:45.532771",
+  "name": "emma@nlwatch.xyz",
+  "user": "emmanueloluboyede@gmail.com",
+  "user_name": "Emmanuel Oluboyede"
+ },
+ {
+  "dm_email": "gbadamosi@nlwatch.xyz",
+  "docstatus": 0,
+  "doctype": "Digital Marketers",
+  "modified": "2025-02-25 11:56:51.923650",
+  "name": "gbadamosi@nlwatch.xyz",
+  "user": "abukhadeejahgbadamosi@gmail.com",
+  "user_name": "Olarenwaju Gbadamosi"
+ },
+ {
+  "dm_email": "orders@tkstore.ng",
+  "docstatus": 0,
+  "doctype": "Digital Marketers",
+  "modified": "2025-02-09 18:34:29.412996",
+  "name": "orders@tkstore.ng",
+  "user": "timothydamola@gmail.com",
+  "user_name": "Timothy Moyofola"
+ }
+]

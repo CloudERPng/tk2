@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-24 08:50:20.746687",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "staff",
+  "column_break_hzkd",
+  "role",
+  "active",
+  "section_break_kotz",
+  "cs_list"
+ ],
+ "fields": [
+  {
+   "fieldname": "staff",
+   "fieldtype": "Link",
+   "label": "Staff",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_hzkd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "staff.role_profile_name",
+   "fieldname": "role",
+   "fieldtype": "Data",
+   "label": "Role",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "fieldname": "section_break_kotz",
+   "fieldtype": "Section Break",
+   "label": "CS On Duty"
+  },
+  {
+   "fieldname": "cs_list",
+   "fieldtype": "HTML",
+   "label": "CS List"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-04-12 21:50:38.359453",
+ "modified_by": "Administrator",
+ "module": "Tk2",
+ "name": "CS On Duty",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "read": 1,
+   "role": "Sales Master Manager",
+   "select": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
