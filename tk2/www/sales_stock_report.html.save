@@ -1,0 +1,8 @@
+("Report copied to clipboard!");
+      }, function(err) {
+        console.error("Could not copy text: ", err);
+      });
+    }
+  </script>
+</body>
+</html>

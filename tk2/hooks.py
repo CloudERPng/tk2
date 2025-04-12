@@ -1,7 +1,7 @@
 app_name = "tk2"
-app_title = "TKs"
-app_publisher = "Olamide"
-app_description = "For TKS"
+app_title = "Tk2"
+app_publisher = "xlevelsystems"
+app_description = "for TKstore"
 app_email = "olamide@xlevelretail.com"
 app_license = "mit"
 
@@ -15,7 +15,7 @@ app_license = "mit"
 # 	{
 # 		"name": "tk2",
 # 		"logo": "/assets/tk2/logo.png",
-# 		"title": "TKs",
+# 		"title": "Tk2",
 # 		"route": "/tk2",
 # 		"has_permission": "tk2.api.permission.has_app_permission"
 # 	}

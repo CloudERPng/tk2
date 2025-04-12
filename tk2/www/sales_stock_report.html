@@ -1,0 +1,122 @@
+{% extends "templates/web.html" %}
+
+{% block head %}
+  {{ super() }}
+  <title>Sales & Stock Report</title>
+  <!-- Include Bootstrap from a CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+  
+  <!-- Optional: Your own custom CSS overrides -->
+  <style>
+    .report-title {
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+  <h2 class="report-title">Sales &amp; Stock Report</h2>
+  
+  <!-- Filters Form -->
+  <form id="report-form" class="form-row">
+    <div class="form-group col-md-4">
+      <label for="start_date">Start Date</label>
+      <input type="date" class="form-control" id="start_date" name="start_date" required>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="end_date">End Date</label>
+      <input type="date" class="form-control" id="end_date" name="end_date" required>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="warehouse">Warehouse</label>
+      <select class="form-control" id="warehouse" name="warehouse" required>
+        <option value="">Select Warehouse</option>
+      </select>
+    </div>
+    <div class="col-12 mt-2">
+      <button type="button" class="btn btn-primary mr-2" onclick="generateReport()">Generate Report</button>
+      <button type="button" class="btn btn-secondary" onclick="copyReport()">Copy Report to Clipboard</button>
+    </div>
+  </form>
+
+  <!-- Report Output -->
+  <div id="report_output" class="mt-4"></div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Populate Warehouse Dropdown on page load
+  frappe.call({
+    method: "frappe.client.get_list",
+    args: {
+      doctype: "Warehouse",
+      fields: ["name"],
+      limit_page_length: 0
+    },
+    callback: function(r) {
+      if (r.message) {
+        var warehouseSelect = document.getElementById("warehouse");
+        r.message.forEach(function(item) {
+          var option = document.createElement("option");
+          option.value = item.name;
+          option.text = item.name;
+          warehouseSelect.appendChild(option);
+        });
+      }
+    },
+    error: function(err) {
+      console.error("Error fetching warehouse list:", err);
+    }
+  });
+});
+
+// Generate the report by calling your whitelisted method
+function generateReport() {
+  var start_date = document.getElementById("start_date").value;
+  var end_date = document.getElementById("end_date").value;
+  var warehouse = document.getElementById("warehouse").value;
+
+  if (!start_date || !end_date || !warehouse) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  frappe.call({
+    method: "tk2.api.get_report",  // Update if your function path differs
+    args: {
+      start_date: start_date,
+      end_date: end_date,
+      warehouse: warehouse
+    },
+    callback: function(response) {
+      if (response.message) {
+        document.getElementById("report_output").innerHTML = response.message;
+      }
+    },
+    error: function(err) {
+      console.error("Error generating report:", err);
+      alert("There was an error generating the report.");
+    }
+  });
+}
+
+// Copy the report text to the clipboard
+function copyReport() {
+  var reportDiv = document.getElementById("report_output");
+  var textToCopy = reportDiv.innerText;
+  navigator.clipboard.writeText(textToCopy).then(function() {
+    alert("Report copied to clipboard!");
+  }, function(err) {
+    console.error("Could not copy text:", err);
+  });
+}
+</script>
+
+<!-- Optionally include Bootstrap JS if you need interactive components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}
