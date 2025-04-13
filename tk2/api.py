@@ -27,25 +27,45 @@ def search_customer(email=None, mobile=None):
 
     # 3. None found
     return None
-
+    
 @frappe.whitelist()
-def create_customer(customer_name, email=None, mobile=None):
+def create_customer(customer_name, country=None, default_account=None, billing_currency=None, email=None, mobile=None):
     """
     Create a new Customer with defaults:
       - customer_group = "Individual"
-      - territory = "Nigeria"
+      - Territory defaults to "Nigeria"
+      
+    If the customer's country is "Ghana", then:
+      - Set territory to "Ghana"
+      - Append a child row in the accounts table with the default receivable account
+      - Set billing_currency from the provided billing_currency parameter
+      
     Returns the newly created Customer name.
     """
-    doc = frappe.get_doc({
+    customer = frappe.get_doc({
         "doctype": "Customer",
         "customer_name": customer_name,
         "customer_group": "Individual",
-        "territory": "Nigeria",
+        "territory": "Nigeria",   # default territory
+        "country": country,
+        "default_currency": billing_currency,
         "email_id": email,
         "mobile_no": mobile,
     })
-    doc.insert(ignore_permissions=True)
-    return doc.name
+    
+    if customer.get("country") == "Ghana":
+        customer.territory = "Ghana"
+        # Append the default receivable account to the child table "accounts"
+        if default_account:
+            customer.append("accounts", {
+                "account": default_account,
+                "company": company
+            })
+
+    customer.insert(ignore_permissions=True)
+    return customer.name
+
+
 
 
 
