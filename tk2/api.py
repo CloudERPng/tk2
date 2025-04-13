@@ -53,13 +53,9 @@ def create_customer(customer_name, country=None, default_account=None, billing_c
         "mobile_no": mobile,
     })
     
-    if customer.get("country") == "Ghana":
-        customer.country = "Ghana"
-        # Append the default receivable account to the child table "accounts"
-        if default_account:
-            customer.append("accounts", {
-                "account": default_account,
-                "company": company
+        customer.append("accounts", {
+             "account": default_account,
+             "company": company
             })
 
     customer.insert(ignore_permissions=True)
