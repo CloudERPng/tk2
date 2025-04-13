@@ -29,7 +29,7 @@ def search_customer(email=None, mobile=None):
     return None
     
 @frappe.whitelist()
-def create_customer(customer_name, country=None, default_account=None, billing_currency=None, email=None, mobile=None, company=None):
+def create_customer(customer_name, country=None, account=None, default_currency=None, email=None, mobile=None, company=None):
     """
     Create a new Customer with defaults:
       - customer_group: "Individual"
