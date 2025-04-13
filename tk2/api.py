@@ -52,7 +52,7 @@ def create_customer(customer_name, country=None, account=None, default_currency=
         "country": country,
         "email_id": email,
         "mobile_no": mobile,
-        "default_currency": billing_currency
+        "default_currency": default_currency
     })
     
     # Unconditionally append the default receivable account to the child table "accounts"
