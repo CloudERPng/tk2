@@ -58,7 +58,7 @@ def create_customer(customer_name, country=None, account=None, default_currency=
     # Unconditionally append the default receivable account to the child table "accounts"
     customer.append("accounts", {
         "company": company,
-        "account": default_account
+        "account": account
     })
 
     customer.insert(ignore_permissions=True)
