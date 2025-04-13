@@ -29,37 +29,41 @@ def search_customer(email=None, mobile=None):
     return None
     
 @frappe.whitelist()
-def create_customer(customer_name, country=None, default_account=None, billing_currency=None, email=None, mobile=None):
+def create_customer(customer_name, country=None, default_account=None, billing_currency=None, email=None, mobile=None, company=None):
     """
     Create a new Customer with defaults:
-      - customer_group = "Individual"
-      - Territory defaults to "Nigeria"
+      - customer_group: "Individual"
+      - Territory: Set to the country provided, or defaults to "Nigeria" if no country is specified.
       
-    If the customer's country is "Ghana", then:
-      - Set territory to "Ghana"
-      - Append a child row in the accounts table with the default receivable account
-      - Set billing_currency from the provided billing_currency parameter
-      
-    Returns the newly created Customer name.
+    The script unconditionally appends a child row in the "accounts" table for the default receivable account,
+    and sets the billing_currency on the Customer document.
+    
+    Returns:
+        The name of the newly created Customer.
     """
+    # Use the provided country for territory, or default to Nigeria
+    territory = country if country else "Nigeria"
+    
     customer = frappe.get_doc({
         "doctype": "Customer",
         "customer_name": customer_name,
         "customer_group": "Individual",
-        "territory": "Nigeria",   # default territory
+        "territory": territory,
         "country": country,
-        "default_currency": billing_currency,
         "email_id": email,
         "mobile_no": mobile,
+        "default_currency": billing_currency
     })
     
-        customer.append("accounts", {
-             "account": default_account,
-             "company": company
-            })
+    # Unconditionally append the default receivable account to the child table "accounts"
+    customer.append("accounts", {
+        "company": company,
+        "account": default_account
+    })
 
     customer.insert(ignore_permissions=True)
     return customer.name
+    
 
 
 
