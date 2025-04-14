@@ -73,6 +73,8 @@ def create_customer(customer_name, country=None, account=None, default_currency=
 import frappe
 from frappe.utils import nowdate
 @frappe.whitelist()
+
+from erpnext.setup.utils import get_exchange_rate
 def create_sales_invoice(customer_service_sheet):
     doc = frappe.get_doc("Customer Service Sheet", customer_service_sheet)
 
@@ -88,7 +90,7 @@ def create_sales_invoice(customer_service_sheet):
     
     # If the invoice currency differs from the company currency, fetch the conversion rate
     if doc.default_currency != company_currency:
-        conversion_rate = frappe.get_exchange_rate(doc.default_currency, company_currency)
+        conversion_rate = get_exchange_rate(doc.default_currency, company_currency)
         if not conversion_rate:
             frappe.throw("Unable to fetch exchange rate from {0} to {1}".format(doc.default_currency, company_currency))
     else:
