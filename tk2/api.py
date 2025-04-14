@@ -207,7 +207,8 @@ def create_sales_invoice(customer_service_sheet):
         si.apply_discount_on = "Grand Total"
         si.discount_amount = difference  # difference is (invoice_total - doc.price)
         si.additional_discount_percentage = 0
-
+        
+    si.flags.ignore_validate_exchange_rate = True
     # ------------------------------------------------------------
     # 4) Insert & Submit the Sales Invoice
     # ------------------------------------------------------------
