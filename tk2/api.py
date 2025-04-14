@@ -72,28 +72,7 @@ def create_customer(customer_name, country=None, account=None, default_currency=
 
 import frappe
 from frappe.utils import nowdate
-
-def get_exchange_rate(from_currency, to_currency, company):
     """
-    Retrieves the most recent exchange rate between from_currency and to_currency
-    for the specified company, ordering by the modified date.
-    If no exchange rate is found, returns 1.0.
-    """
-    rate_records = frappe.db.get_all(
-        "Currency Exchange",
-        filters={
-            "from_currency": from_currency,
-            "to_currency": to_currency,
-            "company": company
-        },
-        fields=["exchange_rate"],
-        order_by="modified desc",
-        limit_page_length=1
-    )
-    if rate_records and rate_records[0].get("exchange_rate"):
-        return rate_records[0].get("exchange_rate")
-    else:
-        return 1.0
         
 @frappe.whitelist()
 def create_sales_invoice(customer_service_sheet):
@@ -111,9 +90,8 @@ def create_sales_invoice(customer_service_sheet):
     
     # If the invoice currency differs from the company currency, fetch the conversion rate
     if doc.default_currency != company_currency:
-        conversion_rate = get_exchange_rate(doc.default_currency, company_currency)
+        conversion_rate = doc.exchange_rate or 1.0
         if not conversion_rate:
-            frappe.throw("Unable to fetch exchange rate from {0} to {1}".format(doc.default_currency, company_currency))
     else:
         conversion_rate = 1.0
     
