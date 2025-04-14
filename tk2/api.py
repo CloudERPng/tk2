@@ -665,12 +665,15 @@ def create_journal_entry2(agent_payment, selected_invoices):
     default_ar = frappe.get_cached_value("Company", company, "default_receivable_account")
 
     for inv in selected_invoices:
-        # Attempt to get a customer-specific receivable account.
-        # Change "Customer" and "receivable_account" if your override is stored elsewhere
-        customer_ar = frappe.db.get_value("Customer", inv.get("customer"), "receivable_account")
+        # Try to get the customer's receivable account from the Party Account child table
+        customer_account = frappe.db.get_value("Party Account", {
+            "parent": inv.get("customer"),
+            "parenttype": "Customer",
+            "company": company
+        }, "account")
     
-        # If the customer's receivable account exists, use it; otherwise, use the default
-        receivable_account = customer_ar if customer_ar else default_ar
+        # Use the customer's account if it exists, otherwise fall back to default_ar
+        receivable_account = customer_account if customer_account else default_ar
 
         amt = float(inv.get("outstanding_amount", 0))
         je.append("accounts", {
