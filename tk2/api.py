@@ -72,7 +72,7 @@ def create_customer(customer_name, country=None, account=None, default_currency=
 
 import frappe
 from frappe.utils import nowdate
-from erpnext.accounts.doctype.currency_exchange.currency_exchange import get_exchange_rate
+from erpnext.accounts.utils import get_exchange_rate
 @frappe.whitelist()
 def create_sales_invoice(customer_service_sheet):
     doc = frappe.get_doc("Customer Service Sheet", customer_service_sheet)
