@@ -624,7 +624,8 @@ def create_journal_entry2(agent_payment, selected_invoices):
     # Retrieve commission and charges (deductions)
     commission = float(agent_payment.get("commissions_deducted") or 0)
     charges = float(agent_payment.get("charges_deducted") or 0)
-    
+    deliverygl =  agent_payment.get("delivery_gl") or ""   
+    discountgl =  agent_payment.get("discount_gl") or "" 
     # Compute the net payment: invoice_total minus the deductions
     computed_total = invoice_total - commission - charges
     
@@ -691,7 +692,7 @@ def create_journal_entry2(agent_payment, selected_invoices):
     # Debit: Commission on Sales – TK for the commission deducted (if any)
     if commission:
         je.append("accounts", {
-            "account": doc.discount_gl,
+            "account": discountgl,
             "debit_in_account_currency": commission,
             "credit_in_account_currency": 0,
             "cost_center": cost_center
@@ -700,7 +701,7 @@ def create_journal_entry2(agent_payment, selected_invoices):
     # Debit: Delivery Charges – TK for the charges deducted (if any)
     if charges:
         je.append("accounts", {
-            "account": doc.delivery_gl,
+            "account": deliverygl,
             "debit_in_account_currency": charges,
             "credit_in_account_currency": 0,
             "cost_center": cost_center
