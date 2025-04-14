@@ -131,6 +131,8 @@ def create_sales_invoice(customer_service_sheet):
         "company": default_company,
         "customer": doc.erp_customer,
         "posting_date": nowdate(),
+        "currency": doc.default_currency,
+        "selling_price_list": doc.price_list,
         "set_posting_time": 1,
         "custom_agent": doc.custom_agent,
         "write_off_amount": 0.0,
