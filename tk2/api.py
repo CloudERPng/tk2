@@ -72,7 +72,6 @@ def create_customer(customer_name, country=None, account=None, default_currency=
 
 import frappe
 from frappe.utils import nowdate
-    """
         
 @frappe.whitelist()
 def create_sales_invoice(customer_service_sheet):
