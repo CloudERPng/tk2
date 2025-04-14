@@ -691,7 +691,7 @@ def create_journal_entry2(agent_payment, selected_invoices):
     # Debit: Commission on Sales – TK for the commission deducted (if any)
     if commission:
         je.append("accounts", {
-            "account": discount_gl,
+            "account": doc.discount_gl,
             "debit_in_account_currency": commission,
             "credit_in_account_currency": 0,
             "cost_center": cost_center
@@ -700,7 +700,7 @@ def create_journal_entry2(agent_payment, selected_invoices):
     # Debit: Delivery Charges – TK for the charges deducted (if any)
     if charges:
         je.append("accounts", {
-            "account": delivery_gl,
+            "account": doc.delivery_gl,
             "debit_in_account_currency": charges,
             "credit_in_account_currency": 0,
             "cost_center": cost_center
