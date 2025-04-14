@@ -165,7 +165,7 @@ def create_sales_invoice(customer_service_sheet):
             item_defaults = {}
 
         income_account = item_defaults.get("income_account") or company_defaults.default_income_account
-        cost_center = item_defaults.get("cost_center") or company_defaults.default_cost_center
+        cost_center = item_defaults.get("cost_center") or company_defaults.cost_center
         si.append("items", {
             "item_code": row.item_code,
             "qty": row.qty,
