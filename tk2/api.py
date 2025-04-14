@@ -660,11 +660,21 @@ def create_journal_entry2(agent_payment, selected_invoices):
     })
     
     # Credit: For each selected Sales Invoice, credit AR with the outstanding amount
+
+    # Get the company's default accounts receivable
     default_ar = frappe.get_cached_value("Company", company, "default_receivable_account")
+
     for inv in selected_invoices:
+        # Attempt to get a customer-specific receivable account.
+        # Change "Customer" and "receivable_account" if your override is stored elsewhere
+        customer_ar = frappe.db.get_value("Customer", inv.get("customer"), "receivable_account")
+    
+        # If the customer's receivable account exists, use it; otherwise, use the default
+        receivable_account = customer_ar if customer_ar else default_ar
+
         amt = float(inv.get("outstanding_amount", 0))
         je.append("accounts", {
-            "account": default_ar,
+            "account": receivable_account,
             "credit_in_account_currency": amt,
             "debit_in_account_currency": 0,
             "party_type": "Customer",
@@ -673,6 +683,7 @@ def create_journal_entry2(agent_payment, selected_invoices):
             "reference_type": "Sales Invoice",
             "reference_name": inv.get("name")
         })
+
     
     # Debit: Commission on Sales – TK for the commission deducted (if any)
     if commission:
