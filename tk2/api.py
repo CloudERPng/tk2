@@ -78,8 +78,21 @@ def create_sales_invoice(customer_service_sheet):
 
     if not doc.erp_customer:
         frappe.throw("No linked Customer found in erp_customer field")
+    if not doc.company:
+        frappe.throw("Company is not specified in the Customer Service Sheet")
+    company = doc.company
 
-    default_company = "Timmie Kettle"
+    company_currency = frappe.get_value("Company", company, "default_currency")
+    if not company_currency:
+        frappe.throw("Company currency is not defined for {0}".format(company))
+    
+    # If the invoice currency differs from the company currency, fetch the conversion rate
+    if doc.default_currency != company_currency:
+        conversion_rate = frappe.get_exchange_rate(doc.default_currency, company_currency)
+        if not conversion_rate:
+            frappe.throw("Unable to fetch exchange rate from {0} to {1}".format(doc.default_currency, company_currency))
+    else:
+        conversion_rate = 1.0
     
     # Collect items from the Customer Service Sheet
     child_items = doc.get("item") or []
@@ -128,10 +141,11 @@ def create_sales_invoice(customer_service_sheet):
     # ------------------------------------------------------------
     si = frappe.get_doc({
         "doctype": "Sales Invoice",
-        "company": default_company,
+        "company": company,
         "customer": doc.erp_customer,
         "posting_date": nowdate(),
         "currency": doc.default_currency,
+        "conversion_rate": conversion_rate,
         "selling_price_list": doc.price_list,
         "conversion_rate": 10.05,
         "set_posting_time": 1,
@@ -140,13 +154,27 @@ def create_sales_invoice(customer_service_sheet):
         "base_write_off_amount": 0.0,
         "items": []
     })
+    company_defaults = frappe.get_doc("Company", company)
 
     # Add items from the CSS child table to the Sales Invoice
     for row in child_items:
+        # Attempt to fetch the default income account and cost center from the Item record
+        item_defaults = frappe.get_value("Item", row.item_code, ["income_account", "cost_center"], as_dict=True)
+        if item_defaults and item_defaults.income_account:
+            income_account = item_defaults.income_account
+        else:
+            income_account = company_defaults.default_income_account  # Use company default
+
+        if item_defaults and item_defaults.cost_center:
+            cost_center = item_defaults.cost_center
+        else:
+            cost_center = company_defaults.default_cost_center  # Use company default
         si.append("items", {
             "item_code": row.item_code,
             "qty": row.qty,
-            "rate": row.rate
+            "rate": row.rate,
+            "income_account": income_account,
+            "cost_center": cost_enter
         })
 
     # ------------------------------------------------------------
