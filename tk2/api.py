@@ -90,7 +90,6 @@ def create_sales_invoice(customer_service_sheet):
     # If the invoice currency differs from the company currency, fetch the conversion rate
     if doc.default_currency != company_currency:
         conversion_rate = doc.exchange_rate or 1.0
-        if not conversion_rate:
     else:
         conversion_rate = 1.0
     
