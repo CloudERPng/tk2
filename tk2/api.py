@@ -153,20 +153,19 @@ def create_sales_invoice(customer_service_sheet):
         "items": []
     })
     company_defaults = frappe.get_doc("Company", company)
+    item_meta = frappe.get_meta("Item")
+    item_has_income_account = item_meta.has_field("income_account")
+    item_has_cost_center = item_meta.has_field("cost_center")
 
-    # Add items from the CSS child table to the Sales Invoice
     for row in child_items:
-        # Attempt to fetch the default income account and cost center from the Item record
-        item_defaults = frappe.get_value("Item", row.item_code, ["income_account", "cost_center"], as_dict=True)
-        if item_defaults and item_defaults.income_account:
-            income_account = item_defaults.income_account
+        if item_has_income_account and item_has_cost_center:
+            # Attempt to fetch income_account and cost_center from the Item doctype
+            item_defaults = frappe.get_value("Item", row.item_code, ["income_account", "cost_center"], as_dict=True)
         else:
-            income_account = company_defaults.default_income_account  # Use company default
+            item_defaults = {}
 
-        if item_defaults and item_defaults.cost_center:
-            cost_center = item_defaults.cost_center
-        else:
-            cost_center = company_defaults.default_cost_center  # Use company default
+        income_account = item_defaults.get("income_account") or company_defaults.default_income_account
+        cost_center = item_defaults.get("cost_center") or company_defaults.default_cost_center
         si.append("items", {
             "item_code": row.item_code,
             "qty": row.qty,
