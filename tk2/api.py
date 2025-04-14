@@ -72,7 +72,29 @@ def create_customer(customer_name, country=None, account=None, default_currency=
 
 import frappe
 from frappe.utils import nowdate
-from erpnext.accounts.utils import get_exchange_rate
+
+def get_exchange_rate(from_currency, to_currency, company):
+    """
+    Retrieves the most recent exchange rate between from_currency and to_currency
+    for the specified company, ordering by the modified date.
+    If no exchange rate is found, returns 1.0.
+    """
+    rate_records = frappe.db.get_all(
+        "Currency Exchange",
+        filters={
+            "from_currency": from_currency,
+            "to_currency": to_currency,
+            "company": company
+        },
+        fields=["exchange_rate"],
+        order_by="modified desc",
+        limit_page_length=1
+    )
+    if rate_records and rate_records[0].get("exchange_rate"):
+        return rate_records[0].get("exchange_rate")
+    else:
+        return 1.0
+        
 @frappe.whitelist()
 def create_sales_invoice(customer_service_sheet):
     doc = frappe.get_doc("Customer Service Sheet", customer_service_sheet)
@@ -148,7 +170,6 @@ def create_sales_invoice(customer_service_sheet):
         "currency": doc.default_currency,
         "conversion_rate": conversion_rate,
         "selling_price_list": doc.price_list,
-        "conversion_rate": 10.05,
         "set_posting_time": 1,
         "custom_agent": doc.custom_agent,
         "write_off_amount": 0.0,
