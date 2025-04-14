@@ -171,7 +171,7 @@ def create_sales_invoice(customer_service_sheet):
             "qty": row.qty,
             "rate": row.rate,
             "income_account": income_account,
-            "cost_center": cost_enter
+            "cost_center": cost_center
         })
 
     # ------------------------------------------------------------
